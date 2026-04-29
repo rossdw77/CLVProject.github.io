@@ -94,5 +94,25 @@ Expectation is that xgboost would perform the best across both classification an
 
 ## Model Summary
 
+- snapshots of AUC/ROC and MAPE
+
+### Regression Models
+
+
+### Classification Models
+
+- mid, low and high confusion matricies
+
+### Classification to Regression Models
+
+- work on adding the function for the MAPE rerouting and how the misspecified classification lead to the worst scores
+
+
+### Regression by decile Models
+
 
 ## Conclusion
+
+- The CLV project helped me put in perspective what it takes to build an end to end machine learning process
+- My original hypothesized plan did not go fully as expected and I had to deviate to adjust to find the most optimal accuracy across regression and classification models
+- I not only learned which models to train but how to put the outputs in perspective to the business (how we can leverage the reg models for top deciles - explain performance and what MAPE actually means in this case)
