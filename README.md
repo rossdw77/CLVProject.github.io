@@ -225,12 +225,34 @@ Test: 9/1/2024 to 3/25/2024
 
 
 
+| Module | Description |
+|---|---|
+| `config` | Column identifiers, train/test date split, spend binning parameters |
+| `data_loader` | Raw transaction ingestion and outlier threshold definitions |
+| `visualizations` | Spend distribution, categorical slices, time series review |
+| `preprocessing` | Customer aggregation, RFM feature computation |
+| `model_prep` | Feature selection, spend binning, CLV ranking, train/test splits |
+| `classification_models` | Logistic Regression, XGBoost Classifier, Decision Trees |
+| `regression_models` | Linear Regression, XGBoost Regressor, Decision Trees |
+| `statistical_models` | BTYD/NBD, Gamma-Gamma |
+| `evaluation` | MAPE (regression), ROC/AUC + classification report, SHAP TreeExplainer |
+
+
+
 ## Modeling Techniques
 
 Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As model is trained off the residuals to minimize feature split error.
 
 
-Explain how I used CV randomized search for xgboost and random forest models?
+I used CV randomized search for xgboost and random forest models in order to find the best parameters to train models and avoid overfitting.
+
+
+**Hyperparameter Tuning**
+
+Due to the computational power needed to process cross validation plus each parameters' grid, I began by choosing a range of values that were on the lower side to see if the best fit parameters stayed on the lower end of the range or continually were at the higher end of the range. I was especially cognizant of the max_depth and wanted to keep that lower in order to avoid overfitting. However, I did keep the min_child_weight on the higher side in order to ensure I had enough data points so that there were not too many tree splits to keep things more simplistic. My reg lambda score was also higher in order to ensure there was no overfitting. 
+
+
+[Describe your tuning approach. Key decisions to mention: max_depth grid, min_child_weight bounds, reg_lambda behavior, early stopping implementation.]
 
 
 ## Modeling Methodology Summary
