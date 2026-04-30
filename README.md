@@ -224,6 +224,15 @@ Test: 9/1/2024 to 3/25/2024
        SHAP TreeExplainer
 
 
+
+## Modeling Techniques
+
+Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As model is trained off the residuals to minimize feature split error.
+
+
+Explain how I used CV randomized search for xgboost and random forest models?
+
+
 ## Modeling Methodology Summary
 
 1. **Regression** based approach lead to poor results. (lower train and higher test MAPE) Due to the data limitations described above. Most of the feature importance went into electronics which is helpful to discren high value customers but not as important for lower value as those customers are defined by other factors which will be show in the **Regression by Decile** approach.
@@ -239,17 +248,64 @@ Test: 9/1/2024 to 3/25/2024
 <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/00ea4a48-067f-4179-b076-711ec0caba21" />
 
 
+**Train**
+
 
 <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/ef35b869-2bf6-4502-9f2e-dae0d2e66f2a" />
 
 
 
+
+**Test**
+
 <img width="798" height="900" alt="image" src="https://github.com/user-attachments/assets/b6e09b2b-cdbf-4936-83bb-4e9b12133d20" />
 
 
 
-2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we don't want to fail to send marketing to our predicted higher value customer pool.
+2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our predicted higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. 
 
+
+**Results from Xgboost Classifier**
+
+
+[train] ROC AUC: 0.9403
+
+[train] Classification Report:
+              precision    recall  f1-score   support
+
+        high       0.85      0.84      0.85      1415
+         low       0.87      0.85      0.86      1374
+         mid       0.70      0.72      0.71      1373
+
+    accuracy                           0.80      4162
+   macro avg       0.81      0.80      0.80      4162
+weighted avg       0.81      0.80      0.81      4162
+
+[train] Confusion Matrix:
+[[1194    3  218]
+ [   6 1164  204]
+ [ 204  178  991]]
+
+
+
+
+[test] ROC AUC: 0.9075
+
+[test] Classification Report:
+              precision    recall  f1-score   support
+
+        high       0.80      0.77      0.78      1268
+         low       0.86      0.83      0.84      1443
+         mid       0.61      0.66      0.63      1250
+
+    accuracy                           0.76      3961
+   macro avg       0.76      0.75      0.75      3961
+weighted avg       0.76      0.76      0.76      3961
+
+[test] Confusion Matrix:
+[[ 975    1  292]
+ [   6 1193  244]
+ [ 236  191  823]]
 
 
 
@@ -257,35 +313,167 @@ Test: 9/1/2024 to 3/25/2024
 
 
  
-3. Multi Staged approach in which I trained classification models on true low, mid and high splits and generated test rating predictions. Then trained regression models on each of the buckets and passed in test data hoping for better regression MAPE accuracy. However, this was not very accurate with high MAPE
-4. Regression by decile approach in which a model was trained on each of the deciles resulted in great performance with MAPE around 20-25%. However, not very realistic to maintain 10 models in reality due to data volume, model computation and overall complexity (i.e. many features)
+3. **Multi Staged** approach in which I trained classification models on **true** low, mid and high splits and generated test rating predictions. Then trained regression models on each of the buckets and passed in test data hoping for better MAPE scores compared to the **Regression** approach. However, this was not a very promising solution that ended resulted in high MAPE.
 
 
-## Modeling Techniques
+**Train**
 
-Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As model is trained off the residuals to minimize feature split error.
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MAE</th>
+      <th>MAPE</th>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low</th>
+      <td>98.8730</td>
+      <td>0.5767</td>
+    </tr>
+    <tr>
+      <th>Mid</th>
+      <td>309.4247</td>
+      <td>0.2604</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>1779.9568</td>
+      <td>0.3370</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+**Test** 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MAE</th>
+      <th>MAPE</th>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low</th>
+      <td>173.2437</td>
+      <td>0.6757</td>
+    </tr>
+    <tr>
+      <th>Mid</th>
+      <td>848.2739</td>
+      <td>0.6582</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>2784.5553</td>
+      <td>0.9092</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+4. **Regression by Bins** approach in which a model was trained on 6 bins, which resulted in great performance with test MAPE around 20-25%. However, not very realistic to maintain 10 models in reality due to data volume, model computation and model maintenance.
+
+
+**6 Bins**
+
+Categories (6, interval[float64, right]): [(36.066, 159.81] < (159.81, 439.852] < (439.852, 1299.55] < (1299.55, 3441.978] < (3441.978, 7298.629] < (7298.629, 15077.561]]
+
+
+<img width="1809" height="1790" alt="image" src="https://github.com/user-attachments/assets/f9008ba8-1259-47aa-abff-ff7ae44c8cf0" />
+
+
+**Train**
+
+
+MAE:  $21.17
+MAPE: 29.11%
+MAE:  $48.47
+MAPE: 18.48%
+MAE:  $139.95
+MAPE: 19.19%
+MAE:  $348.15
+MAPE: 17.05%
+MAE:  $670.95
+MAPE: 13.77%
+MAE:  $1,411.49
+MAPE: 13.74%
+
+
+**Test**
+
+
+MAE:  $27.30
+MAPE: 29.69%
+MAE:  $68.99
+MAPE: 27.20%
+MAE:  $195.40
+MAPE: 27.08%
+MAE:  $479.22
+MAPE: 22.72%
+MAE:  $907.31
+MAPE: 19.89%
+MAE:  $2,019.83
+MAPE: 19.12%
+
+
 
 
 ## Statistical Modeling
 
-
-## Model Summary
-
-- snapshots of AUC/ROC and MAPE
-
-### Regression Models
-
-
-### Classification Models
-
-- mid, low and high confusion matricies
-
-### Classification to Regression Models
-
-- work on adding the function for the MAPE rerouting and how the misspecified classification lead to the worst scores
-
-
-### Regression by decile Models
 
 
 ## Conclusion
