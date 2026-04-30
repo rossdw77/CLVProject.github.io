@@ -27,7 +27,96 @@ The data is traditional of a customer transaction data set as it was heavily rig
 
 <img width="859" height="470" alt="image" src="https://github.com/user-attachments/assets/3281b451-781d-4a74-ad43-8a9712cb7085" />
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Recency</th>
+      <td>4162.0</td>
+      <td>293.969966</td>
+      <td>65.509280</td>
+      <td>207.0000</td>
+      <td>237.0000</td>
+      <td>280.00</td>
+      <td>341.0000</td>
+      <td>449.0000</td>
+    </tr>
+    <tr>
+      <th>duration</th>
+      <td>4162.0</td>
+      <td>66.494954</td>
+      <td>72.858306</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>41.00</td>
+      <td>128.0000</td>
+      <td>238.0000</td>
+    </tr>
+    <tr>
+      <th>Frequency</th>
+      <td>4162.0</td>
+      <td>2.182364</td>
+      <td>1.363212</td>
+      <td>1.0000</td>
+      <td>1.0000</td>
+      <td>2.00</td>
+      <td>3.0000</td>
+      <td>9.0000</td>
+    </tr>
+    <tr>
+      <th>Quantity</th>
+      <td>4162.0</td>
+      <td>6.602114</td>
+      <td>4.680904</td>
+      <td>1.0000</td>
+      <td>3.0000</td>
+      <td>5.00</td>
+      <td>9.0000</td>
+      <td>32.0000</td>
+    </tr>
+    <tr>
+      <th>Total_Amount</th>
+      <td>4162.0</td>
+      <td>2652.033013</td>
+      <td>3307.937031</td>
+      <td>37.0663</td>
+      <td>439.8525</td>
+      <td>1299.55</td>
+      <td>3441.9775</td>
+      <td>15076.5614</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+=== Building RFM datasets ===
+  Train: (4162, 23)  |  Test: (3961, 23)
 
 
 ## Workflow
