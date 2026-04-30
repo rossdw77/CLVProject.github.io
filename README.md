@@ -181,49 +181,6 @@ Test: 9/1/2024 to 3/25/2024
 
 #### Pipeline
 
-1. Config
-   Desc: Key parameters to consider in model processing: column identifiers, train/test date split, spend binning
-
-2. data_loader
-   
-   ├── Raw transaction data
-   └── Outlier Thresholds
-
-3. Visualizations
-   ├── Spend distribution analysis
-   ├── Categorical slices
-   └── Time series review
-
-4. Preprocessing
-   - Customer aggregation for modeling
-   - RFM computation (Recency, Frequency, Monetary)
-
-5. model_prep
-   ├─ Select features
-   ├── Spend binning
-   └── CLV ranking
-   - Regression and classification train/test splits
-
-6. classification_models
-   ├── Logistic Regression
-   ├── Xgboost classifer
-   └── Decision Trees
-
-7. regression_models
-   ├── Linear Regression
-   ├── Xgboost regressor
-   └── Decision Trees
-
-9. statistical_models
-   ├── BTYD - NBD
-   ├── Gamma Gamma
-
-11. Evaluation
-   ├── Regression evaluators: Train/test MAPE
-   └── Classification evaluators: ROC/AUC, classification report
-       SHAP TreeExplainer
-
-
 
 | Module | Description |
 |---|---|
@@ -244,10 +201,9 @@ Test: 9/1/2024 to 3/25/2024
 Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As model is trained off the residuals to minimize feature split error.
 
 
-I used CV randomized search for xgboost and random forest models in order to find the best parameters to train models and avoid overfitting.
-
-
 **Hyperparameter Tuning**
+
+I used CV randomized search for xgboost and random forest models in order to find the best parameters to train models and avoid overfitting.
 
 Due to the computational power needed to process cross validation plus each parameters' grid, I began by choosing a range of values that were on the lower side to see if the best fit parameters stayed on the lower end of the range or continually were at the higher end of the range. I was especially cognizant of the max_depth and wanted to keep that lower in order to avoid overfitting. However, I did keep the min_child_weight on the higher side in order to ensure I had enough data points so that there were not too many tree splits to keep things more simplistic. My reg lambda score was also higher in order to ensure there was no overfitting. 
 
@@ -496,10 +452,10 @@ MAPE: 19.12%
 
 ## Statistical Modeling
 
-
+TBD
 
 ## Conclusion
 
-- The CLV project helped me put in perspective what it takes to build an end to end machine learning process
+- The CLV project helped me put in perspective what it takes to build an end to end machine learning process. You cannot just be good at one aspect. There must be a coordinated effort to balance business objectives, coding, model building, and model deployment / execution.
 - My original hypothesized plan did not go fully as expected and I had to deviate to adjust to find the most optimal accuracy across regression and classification models
-- I not only learned which models to train but how to put the outputs in perspective to the business (how we can leverage the reg models for top deciles - explain performance and what MAPE actually means in this case)
+- I not only learned how to build models in my evolving framework, but focused on putting the outputs in perspective to the business (how we can leverage the reg models for top deciles - explain performance and what MAPE actually means in this case)
