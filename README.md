@@ -9,7 +9,7 @@ CLV prediction matters to ensure that marketing teams are catering to their cust
 
 The primary target variable for this project is **Total_Amount**
 
-**Recency, Frequency and Spend ** are key independent variables to consider, however other features like product catrgory, customer demographics and website engagement were evaluated
+**Recency, Frequency and Spend ** are key independent variables to consider, however other features like product category, customer demographics and website engagement were evaluated
 
 ## Data
 
@@ -24,6 +24,9 @@ The data is traditional of a customer transaction data set as it was heavily rig
 2. Even after removing outliers, the data has strong variability, **skewing even more heavily to the right than common customer transaction data sets**
 
 (add min max dates and viz for key dists)
+
+<img width="859" height="470" alt="image" src="https://github.com/user-attachments/assets/3281b451-781d-4a74-ad43-8a9712cb7085" />
+
 
 
 
