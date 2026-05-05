@@ -249,8 +249,9 @@ Due to the computational power needed to process cross validation plus each para
 weighted avg       0.81      0.80      0.81      4162
 
 [train] Confusion Matrix:
-[[1194    3  218]
- [   6 1164  204]
+
+[[1194    3  218]/n
+ [   6 1164  204]/n
  [ 204  178  991]]
 
 
@@ -268,6 +269,7 @@ weighted avg       0.81      0.80      0.81      4162
     accuracy                           0.76      3961
    macro avg       0.76      0.75      0.75      3961
 weighted avg       0.76      0.76      0.76      3961
+
 
 [test] Confusion Matrix:
 [[ 975    1  292]
