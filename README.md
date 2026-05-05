@@ -160,7 +160,7 @@ Ultimately the data was split using the dates below:
 
 **Train: 1/1/2023 to 8/31/2024**
 
-**Test: 9/1/2024 to 3/25/2024**
+**Test: 9/1/2024 to 3/25/2025**
 
 
 
@@ -196,8 +196,6 @@ I used CV randomized search for xgboost and random forest models in order to fin
 
 Due to the computational power needed to process cross validation plus each parameters' grid, I began by choosing a range of values that were on the lower side to see if the best fit parameters stayed on the lower end of the range or continually were at the higher end of the range. I was especially cognizant of the max_depth and wanted to keep that lower in order to avoid overfitting. However, I did keep the min_child_weight on the higher side in order to ensure I had enough data points so that there were not too many tree splits to keep things more simplistic. My reg lambda score was also higher in order to ensure there was no overfitting. 
 
-
-[Describe your tuning approach. Key decisions to mention: max_depth grid, min_child_weight bounds, reg_lambda behavior, early stopping implementation.]
 
 
 ## Modeling Methodology Summary
@@ -415,6 +413,6 @@ TBD
 
 ## Conclusion
 
-- The CLV project helped me put in perspective what it takes to build an end to end machine learning process. You cannot just be good at one aspect. There must be a coordinated effort to balance business objectives, coding, model building, and model deployment / execution.
-- My original hypothesized plan did not go fully as expected and I had to deviate to adjust to find the most optimal accuracy by testing regression and classification methodologies.
-- I not only learned how to develop models and best practices in my evolving framework, but focused on putting the outputs in perspective to the business. For instance, MAPE could at least be leveraged to predict spend amounts for the higher deciles which are essential to driving sustaining and growing the business.
+CLV prediction is a solved problem in theory and a messy one in practice. This project reflects how I actually work: start with a clear hypothesis, measure honestly against it, and adapt when the data tells you something the original plan didn't account for.
+Flat regression failed not because of poor execution but because a single model cannot adequately capture a customer population that spans two orders of magnitude in spend. The classification approach reframed the problem usefully but sacrificed the precision that makes CLV actionable for budget allocation. The binned regression architecture resolved both constraints, with separate models per spend segment each calibrated to the variance profile of that population, achieving 20-25% test MAPE across all bins.
+The real output of this project isn't a model. It's a repeatable framework for navigating the gap between what is technically optimal and what is operationally viable. Every modeling decision involves a tradeoff between accuracy and maintainability, or precision and interpretability. Surfacing those tradeoffs clearly is what separates analysis from a business recommendation.
