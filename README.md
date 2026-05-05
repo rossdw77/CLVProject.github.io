@@ -158,8 +158,9 @@ The data is traditional of a customer transaction data set as it was heavily rig
 
 Ultimately the data was split using the dates below:
 
-Train: 1/1/2023 to 8/31/2024
-Test: 9/1/2024 to 3/25/2024
+**Train: 1/1/2023 to 8/31/2024
+
+/nTest: 9/1/2024 to 3/25/2024**
 
 
 
