@@ -187,7 +187,7 @@ Ultimately the data was split using the dates below:
 
 ## Modeling Techniques
 
-Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As model is trained off the residuals to minimize feature split error.
+Expectation is that xgboost would perform the best across both classification and regression due to number of features considered that could help break down right tailed distribution of customers' spend. As the model uses an ensemble method to build sequentially on prior errors, it is better positioned to capture non-linear relationships.
 
 
 **Hyperparameter Tuning**
@@ -446,5 +446,5 @@ TBD
 ## Conclusion
 
 - The CLV project helped me put in perspective what it takes to build an end to end machine learning process. You cannot just be good at one aspect. There must be a coordinated effort to balance business objectives, coding, model building, and model deployment / execution.
-- My original hypothesized plan did not go fully as expected and I had to deviate to adjust to find the most optimal accuracy across regression and classification models
-- I not only learned how to build models in my evolving framework, but focused on putting the outputs in perspective to the business (how we can leverage the reg models for top deciles - explain performance and what MAPE actually means in this case)
+- My original hypothesized plan did not go fully as expected and I had to deviate to adjust to find the most optimal accuracy by testing regression and classification methodologies.
+- I not only learned how to develop models and best practices in my evolving framework, but focused on putting the outputs in perspective to the business. For instance, MAPE could at least be leveraged to predict spend amounts for the higher deciles which are essential to driving sustaining and growing the business.
