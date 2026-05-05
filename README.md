@@ -79,19 +79,7 @@ The data is traditional of a customer transaction data set as it was heavily rig
 <img width="859" height="470" alt="image" src="https://github.com/user-attachments/assets/3281b451-781d-4a74-ad43-8a9712cb7085" />
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
