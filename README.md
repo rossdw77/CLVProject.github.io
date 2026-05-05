@@ -250,9 +250,9 @@ weighted avg       0.81      0.80      0.81      4162
 
 [train] Confusion Matrix:
 
-[[1194    3  218]/n
- [   6 1164  204]/n
- [ 204  178  991]]
+[[1194    3  218]  
+ [   6 1164  204]  
+ [ 204  178  991]]  
 
 
 
@@ -272,9 +272,9 @@ weighted avg       0.76      0.76      0.76      3961
 
 
 [test] Confusion Matrix:
-[[ 975    1  292]
- [   6 1193  244]
- [ 236  191  823]]
+[[ 975    1  292]  
+ [   6 1193  244]  
+ [ 236  191  823]]  
 
 
 
@@ -288,20 +288,6 @@ weighted avg       0.76      0.76      0.76      3961
 **Train**
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -341,21 +327,6 @@ weighted avg       0.76      0.76      0.76      3961
 **Test** 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -388,8 +359,6 @@ weighted avg       0.76      0.76      0.76      3961
   </tbody>
 </table>
 </div>
-
-
 
 
 
