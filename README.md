@@ -5,7 +5,7 @@ Evaluating a variety of modeling techniques to predict customers' lifetime value
 
 ### What are customers actually worth for an e-commerce retail business?
 
-CLV prediction matters to ensure that marketing teams are catering to their customer population which has varying degrees of value to the business. Of course, the business wants to ensure that high value customers are retained and continue to spend, however low and mid value customers make up a larger population and in aggregate drive total revenue. 
+CLV prediction matters to ensure that marketing teams are catering to their customer population which has varying degrees of value to the business. A business wants to ensure that high value customers are retained and continue to spend, however low and mid value customers make up a larger population and in aggregate drive total revenue. 
 
 The primary target variable for this project is **Total_Amount**
 
