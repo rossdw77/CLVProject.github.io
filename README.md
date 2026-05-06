@@ -200,7 +200,7 @@ Due to the computational power needed to process cross validation plus each para
 
 ## Modeling Methodology Summary
 
-1. **Regression** based approach lead to poor results. (lower train and higher test MAPE) Due to the data limitations described above. Most of the feature importance went into electronics which is helpful to discren high value customers but not as important for lower value as those customers are defined by other factors which will be show in the **Regression by Decile** approach.
+1. The starting hypothesis was straightforward: a **Regression** model trained on RFM features and customer attributes should be sufficient to predict CLV. However, it wasn't and lead to poor results (lower train and higher test MAPE). Due to the data limitations described above. Most of the feature importance went into electronics which is helpful to discern high value customers but not as important for lower value as those customers are defined by other factors which will be show in the **Regression by Decile** approach. 
 
 
 **Results from the Random Forest Model**
@@ -227,7 +227,8 @@ Due to the computational power needed to process cross validation plus each para
 
 
 
-2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our predicted higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. 
+2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our predicted higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. Due to the spend disparity knowing that a customer is high value is helpful but not precise as the range could be anywhere from 1300 TRY to 15000 TRY.
+
 
 
 **Results from Xgboost Classifier**
@@ -279,7 +280,9 @@ weighted avg       0.76      0.76      0.76      3961
 
 
  
-3. **Multi Staged** approach in which I trained classification models on **true** low, mid and high splits and generated test rating predictions. Then trained regression models on each of the buckets and passed in test data hoping for better MAPE scores compared to the **Regression** approach. However, this was not a very promising solution that ended resulted in high MAPE.
+3. **Multi Staged** approach in which I trained classification models on **true** low, mid and high splits and generated test rating predictions. Then trained regression models on each of the buckets and passed in test data hoping for better MAPE scores compared to the **Regression** approach. However, this was not a very promising solution that resulted in high MAPE in the test set.
+
+The multi-staged approach attempted to combine both: classify first, then regress within each predicted segment. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
 
 
 **Train**
@@ -360,7 +363,7 @@ weighted avg       0.76      0.76      0.76      3961
 
 
 
-4. **Regression by Bins** approach in which a model was trained on 6 bins, which resulted in great performance with test MAPE around 20-25%. However, not very realistic to maintain 10 models in reality due to data volume, model computation and model maintenance.
+4. **Regression by Bins** approach in which a model was trained on 6 bins, which resulted in great performance with test MAPE around 20-25%. However, this is not very realistic in reality to maintain 10 models in reality due to data volume, model computation and model maintenance.
 
 
 **6 Bins**
