@@ -192,9 +192,8 @@ Expectation is that xgboost would perform the best across both classification an
 
 **Hyperparameter Tuning**
 
-I used CV randomized search for xgboost and random forest models in order to find the best parameters to train models and avoid overfitting.
-
-Due to the computational power needed to process cross validation plus each parameters' grid, I began by choosing a range of values that were on the lower side to see if the best fit parameters stayed on the lower end of the range or continually were at the higher end of the range. I was especially cognizant of the max_depth and wanted to keep that lower in order to avoid overfitting. However, I did keep the min_child_weight on the higher side in order to ensure I had enough data points so that there were not too many tree splits to keep things more simplistic. My reg lambda score was also higher in order to ensure there was no overfitting. 
+Hyperparameter search used randomized cross-validation across both XGBoost and Random Forest models. Given the right skewed spend distribution and relatively limited dataset size, the search grid was deliberately biased toward regularization from the start.
+max_depth was capped at 5 and the best result landed at 4, sitting cleanly in the middle of the grid. min_child_weight was kept high at 20 to ensure sufficient observations at each leaf and limit spurious splits on low frequency customers. reg_lambda was set well above the XGBoost default across the entire grid, reflecting a prior expectation that the model would need explicit penalization to generalize across a skewed target. The selected learning rate of 0.01 paired with 500 estimators favored slow, stable convergence over speed.
 
 
 
