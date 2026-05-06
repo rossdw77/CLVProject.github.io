@@ -208,19 +208,19 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 <img width="989" height="1014" alt="image" src="https://github.com/user-attachments/assets/403d81d9-712e-4858-8974-77e3a26e1f7c" />
 
 
+**Train**
 
 <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/00ea4a48-067f-4179-b076-711ec0caba21" />
 
 
-**Train**
 
+**Test**
 
 <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/ef35b869-2bf6-4502-9f2e-dae0d2e66f2a" />
 
 
 
 
-**Test**
 
 <img width="798" height="900" alt="image" src="https://github.com/user-attachments/assets/b6e09b2b-cdbf-4936-83bb-4e9b12133d20" />
 
