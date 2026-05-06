@@ -76,7 +76,8 @@ The data is traditional of a customer transaction data set as it was heavily rig
 2. Even after removing outliers, the data has strong variability, **skewing even more heavily to the right than common customer transaction data sets**
 
 
-<img width="850" height="470" alt="image" src="https://github.com/user-attachments/assets/b3cd7d4b-b2b4-4080-add8-fa9905263d7a" />
+<img width="859" height="470" alt="image" src="https://github.com/user-attachments/assets/53decc22-3e79-4533-8b9b-9476627e0f96" />
+
 
 
 <div>
