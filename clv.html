@@ -501,9 +501,8 @@
         <p class="readme-section-label">01 &mdash; Problem Statement</p>
         <h2>What are customers actually worth?</h2>
         <p>
-          [Replace this with your problem statement. Describe the business context,
-          why CLV prediction matters, and what decision it enables. What does a business
-          do differently when it knows which customers are high-value versus low-value?]
+          CLV prediction matters because marketing resources are finite and customer value is not evenly distributed. A business needs to know which customers drive disproportionate revenue so retention efforts are concentrated where they have the most impact. At the same time, low and mid-tier customers represent the majority of the population, and understanding their behavior ensures they are not overlooked in favor of chasing a small high-value segment.
+By accurately predicting where each customer sits in the value distribution, marketing teams can tailor both outreach frequency and product targeting to match customer profile. This is where interpretability becomes operational. SHAP analysis of this model surfaces electronics affinity as a dominant driver of high-value customer predictions, giving a marketing team a concrete signal about which product categories to lead with for their most valuable segment.
         </p>
         <p>
           [Talk about the prediction horizon, the target variable definition, and what
@@ -523,9 +522,11 @@
         <p class="readme-section-label">02 &mdash; Summary & Constraints</p>
         <h2>Design constraints shaped the architecture.</h2>
         <p>
-          [Summarize the project and the constraints that drove key decisions.
-          E.g., data availability, anonymization requirements, class imbalance
-          in the spend distribution, small sample sizes in certain segments.]
+          The data is traditional of a customer transaction data set as it was heavily right skewed. However, there were key limitations to evaluate:
+
+          1. The total data set was only 1 year and 3 months which limited how much data the models could be trained on
+          2. Even after removing outliers, the data has strong variability, skewing even more heavily to the right than common customer transaction data sets
+          
         </p>
 
         <h3>Key Results</h3>
@@ -535,7 +536,7 @@
             <div class="metric-label">MAPE (mid-tier bins)</div>
           </div>
           <div class="metric-card">
-            <div class="metric-value">X bins</div>
+            <div class="metric-value">10 bins</div>
             <div class="metric-label">Spend Segments</div>
           </div>
           <div class="metric-card">
