@@ -1,4 +1,4 @@
-# CLVProject
+# CLV Project
 Evaluating a variety of modeling techniques to predict customers' lifetime value from a Kaggle dataset (https://www.kaggle.com/datasets/umuttuygurr/e-commerce-customer-behavior-and-sales-analysis-tr)
 
 ## Summary
@@ -123,19 +123,6 @@ Ultimately the data was split using the dates below:
 #### Pipeline
 
 
-| Module | Description |
-|---|---|
-| `config` | Column identifiers, train/test date split, spend binning parameters |
-| `data_loader` | Raw transaction ingestion and outlier threshold definitions |
-| `visualizations` | Spend distribution, categorical slices, time series review |
-| `preprocessing` | Customer aggregation, RFM feature computation |
-| `model_prep` | Feature selection, spend binning, CLV ranking, train/test splits |
-| `classification_models` | Logistic Regression, XGBoost Classifier, Decision Trees |
-| `regression_models` | Linear Regression, XGBoost Regressor, Decision Trees |
-| `statistical_models` | BTYD/NBD, Gamma-Gamma |
-| `evaluation` | MAPE (regression), ROC/AUC + classification report, SHAP TreeExplainer |
-
-
 <img width="1440" height="680" alt="image" src="https://github.com/user-attachments/assets/ae5fc767-c4d8-4878-a081-29a3ca629b9b" />
 
 
@@ -153,6 +140,12 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 
 
 ## Modeling Methodology Summary
+
+
+<img width="1440" height="840" alt="image" src="https://github.com/user-attachments/assets/4d1e50f5-396c-486c-9a01-ab1c5d1d1aec" />
+
+
+## Modeling Methodology Detail
 
 1. The starting hypothesis was straightforward: a **Regression** model trained on RFM features and customer attributes should be sufficient to predict CLV. However, it wasn't and lead to poor results (lower train and higher test MAPE). Due to the data limitations described above. Most of the feature importance went into electronics which is helpful to discern high value customers but not as important for lower value as those customers are defined by other factors which will be show in the **Regression by Decile** approach. 
 
