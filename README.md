@@ -12,6 +12,12 @@ The primary target variable for this project is **Total_Amount**
 **Recency, Frequency and Spend** are key independent variables to consider, however other features like product category, customer demographics and website engagement were evaluated. Product category is a feature that is **highly linked** to **how much a customer ended up spending**
 
 
+### What actions can a business take to maximize CLV value?
+
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/61374b90-2e84-4384-8c5d-6f1e772606dd" />
+
+
 ### Design constraints shaped the architecture
 
 The data is traditional of a customer transaction data set as it was heavily right skewed. However, there were key limitations to evaluate:
