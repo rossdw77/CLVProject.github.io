@@ -136,6 +136,9 @@ Ultimately the data was split using the dates below:
 | `evaluation` | MAPE (regression), ROC/AUC + classification report, SHAP TreeExplainer |
 
 
+<img width="1440" height="680" alt="image" src="https://github.com/user-attachments/assets/ae5fc767-c4d8-4878-a081-29a3ca629b9b" />
+
+
 
 ## Modeling Techniques
 
@@ -371,5 +374,5 @@ TBD
 ## Conclusion
 
 CLV prediction is a solved problem in theory and a messy one in practice. This project reflects how I actually work which begins with a clear hypothesis, measure honestly against it, and adapt when the results tell you something the original plan didn't account for.
-Flat regression failed not because of poor execution but because a single model cannot adequately capture a customer population that spans 5x the mean with a limited time series. The classification approach reframed the problem usefully but sacrificed the precision that makes CLV actionable for marketing budget allocation. The binned regression architecture resolved both constraints, with separate models per spend segment each calibrated to the variance profile of that population, achieving 20-25% test MAPE across all bins. However, that modeling technique would be difficult to implement in the real world.
+Flat regression failed not because of poor execution but because a single model cannot adequately capture a customer population that spans 5x the mean with a limited time series. The classification approach reframed the problem usefully but sacrificed the precision that makes CLV actionable for marketing budget allocation. The binned regression architecture resolved both constraints, with separate models per spend segment each calibrated to the variance profile of that population, achieving 20-25% test MAPE across all bins. However, that modeling technique would need to be assessed by the Data Science team and whether it could be smoothly integrated into production.
 The true output of this project isn't a model. It's a repeatable framework for navigating the gap between what is technically optimal and what is operationally viable. Every modeling decision involves a tradeoff between accuracy and maintainability, or precision and interpretability. Surfacing those tradeoffs clearly is what separates analysis from a business recommendation.
