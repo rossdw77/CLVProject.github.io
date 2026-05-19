@@ -11,62 +11,6 @@ The primary target variable for this project is **Total_Amount**
 
 **Recency, Frequency and Spend** are key independent variables to consider, however other features like product category, customer demographics and website engagement were evaluated. Product category is a feature that is **highly linked** to **how much a customer ended up spending**
 
-## Data
-
-Order_ID
-Unique identifier for each transaction. Format: ORD_XXXXXX (6-digit number)
-
-Customer_ID
-Unique identifier for each customer. Format: CUST_XXXXX (5-digit number)
-
-Date
-Transaction date when the order was placed. Range: 2023-01-01 to 2024-03-26
-
-Age
-Customer's age in years. Range: 18-75 years old
-
-Gender
-Customer's gender. Values: Male, Female, Other
-
-City
-Customer's city location in Turkey. 10 major cities included
-
-Product_Category
-Category of purchased product. 8 categories: Electronics, Fashion, Home & Garden, Sports, Books, Beauty, Toys, Food
-
-Unit_Price
-Price per unit of the product in Turkish Lira (TRY). Varies by category
-
-Quantity
-Number of units purchased in the transaction. Range: 1-5 units
-
-Discount_Amount
-Total discount applied to the order in TRY. Zero if no discount applied
-
-Total_Amount
-Final amount paid after discount (Unit_Price × Quantity - Discount_Amount)
-
-Payment_Method
-Method used for payment. Options: Credit Card, Debit Card, Digital Wallet, Bank Transfer, Cash on Delivery
-
-Device_Type
-Device used to make the purchase. Options: Mobile, Desktop, Tablet
-
-Session_Duration_Minutes
-Time spent on website during the session in minutes. Range: 1-120 minutes
-
-Pages_Viewed
-Number of pages viewed during the shopping session. Range: 1-50 pages
-
-Is_Returning_Customer
-Whether the customer has made previous purchases. Values: True (returning) or False (new customer)
-
-Delivery_Time_Days
-Number of days taken to deliver the order. Range: 1-30 days
-
-Customer_Rating
-Customer satisfaction rating for the order. Scale: 1-5 stars (1=very dissatisfied, 5=very satisfied)
-
 
 ### Design constraints shaped the architecture
 
