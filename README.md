@@ -15,7 +15,8 @@ The primary target variable for this project is **Total_Amount**
 ### What actions can a business take to maximize CLV value?
 
 
-<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/61374b90-2e84-4384-8c5d-6f1e772606dd" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/3025b16b-2f9e-4ec9-baa1-86402bbe0de0" />
+
 
 
 ### Design constraints shaped the architecture
