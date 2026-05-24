@@ -167,6 +167,8 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 <img width="989" height="490" alt="train vs test MAPE regression" src="https://github.com/user-attachments/assets/4468a961-218b-4291-964b-b1fed6b96a88" />
 
 
+<br>
+<br>
 
 2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. Due to the spend disparity knowing that a customer is high value is helpful but not precise as the range could be anywhere from 1300 TRY to 15000 TRY.
 
@@ -183,7 +185,8 @@ Train ROC AUC: 0.9403
 <img width="200" height="144" alt="image" src="https://github.com/user-attachments/assets/ff07c582-2ce8-4670-bc18-8a4433fd3123" />
  </div>
 
-
+<br>
+<br>
 
 Test ROC AUC: 0.9075
 
@@ -194,9 +197,8 @@ Test ROC AUC: 0.9075
  </div>
  
 
-
-
-
+<br>
+<br>
 
 
 3. The **Multi Staged** approach attempted to combine both: classify first, then regress within each predicted segment. I trained classification models on **true** low, mid and high splits and generated test rating predictions. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
