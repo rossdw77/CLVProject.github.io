@@ -204,82 +204,14 @@ Test ROC AUC: 0.9075
 3. The **Multi Staged** approach attempted to combine both: classify first, then regress within each predicted segment. I trained classification models on **true** low, mid and high splits and generated test rating predictions. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
 
 
-**Train**
+**Train vs Test**
 
 
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>MAE</th>
-      <th>MAPE</th>
-    </tr>
-    <tr>
-      <th>Model</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Low</th>
-      <td>98.8730</td>
-      <td>0.5767</td>
-    </tr>
-    <tr>
-      <th>Mid</th>
-      <td>309.4247</td>
-      <td>0.2604</td>
-    </tr>
-    <tr>
-      <th>High</th>
-      <td>1779.9568</td>
-      <td>0.3370</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/8199392e-4f56-426e-8b3e-f1946da93b26" />
 
 
-
-
-**Test** 
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>MAE</th>
-      <th>MAPE</th>
-    </tr>
-    <tr>
-      <th>Model</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Low</th>
-      <td>173.2437</td>
-      <td>0.6757</td>
-    </tr>
-    <tr>
-      <th>Mid</th>
-      <td>848.2739</td>
-      <td>0.6582</td>
-    </tr>
-    <tr>
-      <th>High</th>
-      <td>2784.5553</td>
-      <td>0.9092</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+<br>
+<br>
 
 
 4. **Regression by Bins** approach in which a model was trained on each of the 6 bins, resulted in superb performance with test MAPE around 20-25% due to the variation in feature importance across the bins. However, would need to confirm in reality whether it is feasible to maintain multiple models due to data volume, model computation and model maintenance.
