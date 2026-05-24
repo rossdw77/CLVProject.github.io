@@ -230,10 +230,7 @@ weighted avg       0.76      0.76      0.76      3961
 
 
 
- 
-3. **Multi Staged** approach in which I trained classification models on **true** low, mid and high splits and generated test rating predictions. Then trained regression models on each of the buckets and passed in test data hoping for better MAPE scores compared to the **Regression** approach. However, this was not a very promising solution that resulted in high MAPE in the test set.
-
-The Multi Staged approach attempted to combine both: classify first, then regress within each predicted segment. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
+3. The **Multi Staged** approach attempted to combine both: classify first, then regress within each predicted segment. I trained classification models on **true** low, mid and high splits and generated test rating predictions. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
 
 
 **Train**
@@ -314,7 +311,7 @@ The Multi Staged approach attempted to combine both: classify first, then regres
 
 
 
-4. **Regression by Bins** approach in which a model was trained on each of the 6 bins, resulted in great performance with test MAPE around 20-25%. However, this is not very realistic in reality to maintain 10 models due to data volume, model computation and model maintenance.
+4. **Regression by Bins** approach in which a model was trained on each of the 6 bins, resulted in superb performance with test MAPE around 20-25% due to the variation in feature importance across the bins. However, would need to confirm in reality whether it is feasible to maintain multiple models due to data volume, model computation and model maintenance.
 
 
 **6 Bins**
@@ -359,14 +356,8 @@ MAE:  $2,019.83
 MAPE: 19.12%
 
 
-
-
-## Statistical Modeling
-
-TBD
-
 ## Conclusion
 
 CLV prediction is a solved problem in theory and a messy one in practice. This project reflects how I actually work which begins with a clear hypothesis, measure honestly against it, and adapt when the results tell you something the original plan didn't account for.
-Flat regression failed not because of poor execution but because a single model cannot adequately capture a customer population that spans 5x the mean with a limited time series. The classification approach reframed the problem usefully but sacrificed the precision that makes CLV actionable for marketing budget allocation. The binned regression architecture resolved both constraints, with separate models per spend segment each calibrated to the variance profile of that population, achieving 20-25% test MAPE across all bins. However, that modeling technique would need to be assessed by the Data Science team and whether it could be smoothly integrated into production.
-The true output of this project isn't a model. It's a repeatable framework for navigating the gap between what is technically optimal and what is operationally viable. Every modeling decision involves a tradeoff between accuracy and maintainability, or precision and interpretability. Surfacing those tradeoffs clearly is what separates analysis from a business recommendation.
+Flat regression failed not because of poor execution but because a single model cannot adequately capture a customer population that spans 5x the mean with a limited time series. The classification approach reframed the problem usefully but sacrificed the precision that makes CLV actionable for marketing budget allocation. The binned regression architecture resolved both constraints, with separate models per spend segment each calibrated to the variance profile of that population, achieving 20-25% test MAPE across all bins. However, that modeling technique would need to be assessed among Marketing leadership, Data Engineering and the Data Science team as to whether it could be smoothly integrated into production.
+The true output of this project isn't a model. It's a repeatable framework for **navigating the gap between what is technically optimal and what is operationally viable. Every modeling decision involves a tradeoff between accuracy and maintainability, or precision and interpretability. Surfacing those tradeoffs clearly is what separates analysis from a business recommendation.**
