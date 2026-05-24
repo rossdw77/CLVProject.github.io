@@ -178,7 +178,7 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 Train ROC AUC: 0.9403
 
 
-<img width="278" height="115" alt="image" src="https://github.com/user-attachments/assets/4f7c3d44-72ba-4fbb-a157-5988f741b9b8" /> 
+<img width="278" height="115" alt="image" src="https://github.com/user-attachments/assets/4f7c3d44-72ba-4fbb-a157-5988f741b9b8" /n> 
 
 
 <img width="200" height="144" alt="image" src="https://github.com/user-attachments/assets/ff07c582-2ce8-4670-bc18-8a4433fd3123" />
@@ -191,12 +191,16 @@ Test ROC AUC: 0.9075
 
 
 
-<img width="278" height="116" alt="image" src="https://github.com/user-attachments/assets/b0f64bf0-ffcf-4563-9215-adb68580d038" /> 
+<img width="278" height="116" alt="image" src="https://github.com/user-attachments/assets/b0f64bf0-ffcf-4563-9215-adb68580d038" /n> 
 
 
 <img width="200" height="140" alt="image" src="https://github.com/user-attachments/assets/0366d850-8dcf-4038-b785-fc8b0b213de8" />
 
  
+
+
+
+
 
 
 3. The **Multi Staged** approach attempted to combine both: classify first, then regress within each predicted segment. I trained classification models on **true** low, mid and high splits and generated test rating predictions. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
