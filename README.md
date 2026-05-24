@@ -181,24 +181,8 @@ Train ROC AUC: 0.9403
 <img width="278" height="115" alt="image" src="https://github.com/user-attachments/assets/4f7c3d44-72ba-4fbb-a157-5988f741b9b8" />
 
 
-[train] Classification Report:
-              precision    recall  f1-score   support
-
-        high       0.85      0.84      0.85      1415
-         low       0.87      0.85      0.86      1374
-         mid       0.70      0.72      0.71      1373
-
-    accuracy                           0.80      4162
-   macro avg       0.81      0.80      0.80      4162
-weighted avg       0.81      0.80      0.81      4162
-
-[train] Confusion Matrix:
-
-[[1194    3  218]  
- [   6 1164  204]  
- [ 204  178  991]]  
-
-
+<img width="200" height="144" alt="image" src="https://github.com/user-attachments/assets/ff07c582-2ce8-4670-bc18-8a4433fd3123" />
+ 
 
 
 Test ROC AUC: 0.9075
@@ -206,25 +190,9 @@ Test ROC AUC: 0.9075
 
 <img width="278" height="116" alt="image" src="https://github.com/user-attachments/assets/b0f64bf0-ffcf-4563-9215-adb68580d038" />
 
-[test] Classification Report:
-              precision    recall  f1-score   support
 
-        high       0.80      0.77      0.78      1268
-         low       0.86      0.83      0.84      1443
-         mid       0.61      0.66      0.63      1250
-
-    accuracy                           0.76      3961
-   macro avg       0.76      0.75      0.75      3961
-weighted avg       0.76      0.76      0.76      3961
-
-
-[test] Confusion Matrix:
-
-[[ 975    1  292]  
- [   6 1193  244]  
- [ 236  191  823]]  
-
-
+<img width="277" height="110" alt="image" src="https://github.com/user-attachments/assets/978992d0-ee2f-40bf-9c7b-3ac14342cd65" />
+ 
 
 
 3. The **Multi Staged** approach attempted to combine both: classify first, then regress within each predicted segment. I trained classification models on **true** low, mid and high splits and generated test rating predictions. Train MAPE was acceptable but test MAPE degraded significantly across all bins. The classification step introduced label noise as customers near segment boundaries were misassigned, and the downstream regression models overfit to those mislabeled populations rather than learning the true spend signal.
