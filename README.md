@@ -178,63 +178,7 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 Train ROC AUC: 0.9403
 
 
-<style type="text/css">
-#T_7dbeb_row0_col0 {
-  background-color: #08509b;
-  color: #f1f1f1;
-}
-#T_7dbeb_row0_col1 {
-  background-color: #1562a9;
-  color: #f1f1f1;
-}
-#T_7dbeb_row0_col2 {
-  background-color: #0e59a2;
-  color: #f1f1f1;
-}
-#T_7dbeb_row1_col0, #T_7dbeb_row1_col1, #T_7dbeb_row1_col2 {
-  background-color: #08306b;
-  color: #f1f1f1;
-}
-#T_7dbeb_row2_col0, #T_7dbeb_row2_col1, #T_7dbeb_row2_col2 {
-  background-color: #f7fbff;
-  color: #000000;
-}
-</style>
-<table id="T_7dbeb">
-  <caption>Train Classification Report</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_7dbeb_level0_col0" class="col_heading level0 col0" >precision</th>
-      <th id="T_7dbeb_level0_col1" class="col_heading level0 col1" >recall</th>
-      <th id="T_7dbeb_level0_col2" class="col_heading level0 col2" >f1-score</th>
-      <th id="T_7dbeb_level0_col3" class="col_heading level0 col3" >support</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_7dbeb_level0_row0" class="row_heading level0 row0" >high</th>
-      <td id="T_7dbeb_row0_col0" class="data row0 col0" >0.81</td>
-      <td id="T_7dbeb_row0_col1" class="data row0 col1" >0.81</td>
-      <td id="T_7dbeb_row0_col2" class="data row0 col2" >0.81</td>
-      <td id="T_7dbeb_row0_col3" class="data row0 col3" >1415.00</td>
-    </tr>
-    <tr>
-      <th id="T_7dbeb_level0_row1" class="row_heading level0 row1" >low</th>
-      <td id="T_7dbeb_row1_col0" class="data row1 col0" >0.83</td>
-      <td id="T_7dbeb_row1_col1" class="data row1 col1" >0.84</td>
-      <td id="T_7dbeb_row1_col2" class="data row1 col2" >0.84</td>
-      <td id="T_7dbeb_row1_col3" class="data row1 col3" >1374.00</td>
-    </tr>
-    <tr>
-      <th id="T_7dbeb_level0_row2" class="row_heading level0 row2" >mid</th>
-      <td id="T_7dbeb_row2_col0" class="data row2 col0" >0.65</td>
-      <td id="T_7dbeb_row2_col1" class="data row2 col1" >0.65</td>
-      <td id="T_7dbeb_row2_col2" class="data row2 col2" >0.65</td>
-      <td id="T_7dbeb_row2_col3" class="data row2 col3" >1373.00</td>
-    </tr>
-  </tbody>
-</table>
+<img width="278" height="115" alt="image" src="https://github.com/user-attachments/assets/4f7c3d44-72ba-4fbb-a157-5988f741b9b8" />
 
 
 [train] Classification Report:
@@ -257,7 +201,10 @@ weighted avg       0.81      0.80      0.81      4162
 
 
 
-[test] ROC AUC: 0.9075
+Test ROC AUC: 0.9075
+
+
+<img width="278" height="116" alt="image" src="https://github.com/user-attachments/assets/b0f64bf0-ffcf-4563-9215-adb68580d038" />
 
 [test] Classification Report:
               precision    recall  f1-score   support
