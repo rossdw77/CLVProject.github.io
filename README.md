@@ -224,40 +224,16 @@ Categories (6, interval[float64, right]): [(36.066, 159.81] < (159.81, 439.852] 
 
 <img width="1809" height="1790" alt="image" src="https://github.com/user-attachments/assets/f9008ba8-1259-47aa-abff-ff7ae44c8cf0" />
 
+<br>
+<br>
 
-**Train**
-
-
-MAE:  $21.17
-MAPE: 29.11%
-MAE:  $48.47
-MAPE: 18.48%
-MAE:  $139.95
-MAPE: 19.19%
-MAE:  $348.15
-MAPE: 17.05%
-MAE:  $670.95
-MAPE: 13.77%
-MAE:  $1,411.49
-MAPE: 13.74%
+**Train vs Test**
 
 
-**Test**
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/1d5245f3-58b9-44a3-9db2-21f6d98fad07" />
 
-
-MAE:  $27.30
-MAPE: 29.69%
-MAE:  $68.99
-MAPE: 27.20%
-MAE:  $195.40
-MAPE: 27.08%
-MAE:  $479.22
-MAPE: 22.72%
-MAE:  $907.31
-MAPE: 19.89%
-MAE:  $2,019.83
-MAPE: 19.12%
-
+<br>
+<br>
 
 ## Conclusion
 
