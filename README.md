@@ -143,7 +143,11 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 ## Modeling Methodology Summary
 
 
-<img width="1440" height="840" alt="image" src="https://github.com/user-attachments/assets/4d1e50f5-396c-486c-9a01-ab1c5d1d1aec" />
+<img width="1440" height="840" alt="image" src="https://github.com/user-attachments/assets/81ffa788-7f78-4669-be69-9050af7de999" />
+
+<br>
+<br>
+
 
 
 ## Modeling Methodology Detail
