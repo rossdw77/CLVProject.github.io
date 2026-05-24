@@ -162,20 +162,9 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 <img width="798" height="900" alt="image" src="https://github.com/user-attachments/assets/b6e09b2b-cdbf-4936-83bb-4e9b12133d20" />
 
 
-**Train**  
+**Train vs Test MAPE**  
 
-<img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/00ea4a48-067f-4179-b076-711ec0caba21" />
-
-
-
-**Test**  
-
-<img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/ef35b869-2bf6-4502-9f2e-dae0d2e66f2a" />
-
-
-
-
-
+<Figure size 1000x500 with 1 Axes>
 
 
 2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. Due to the spend disparity knowing that a customer is high value is helpful but not precise as the range could be anywhere from 1300 TRY to 15000 TRY.
