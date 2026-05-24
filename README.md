@@ -164,7 +164,8 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 
 **Train vs Test MAPE**  
 
-<Figure size 1000x500 with 1 Axes>
+<img width="989" height="490" alt="train vs test MAPE regression" src="https://github.com/user-attachments/assets/4468a961-218b-4291-964b-b1fed6b96a88" />
+
 
 
 2. **Classification** approach was the best result but reframes our problem statement solution as we don't know the exact value of the customer but can pinpoint their low, mid, high rating based on key purchasing features. The focus was to have a high recall (low false negatives) as we especially don't want to fail to market to our higher value customer pool. The Xgboost Classifier did a great job with low and high customer rankings, however it was less effective discerning the mid value customers. It was about equal between low and high misaligned predictions. Due to the spend disparity knowing that a customer is high value is helpful but not precise as the range could be anywhere from 1300 TRY to 15000 TRY.
