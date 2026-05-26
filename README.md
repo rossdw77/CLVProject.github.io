@@ -169,7 +169,8 @@ max_depth was capped at 5 and the best result landed at 4, sitting cleanly in th
 
 **Train vs Test MAPE**  
 
-<img width="989" height="490" alt="train vs test MAPE regression" src="https://github.com/user-attachments/assets/4468a961-218b-4291-964b-b1fed6b96a88" />
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/60feb00b-7a8e-40dd-be28-860dc400b419" />
+
 
 
 <br>
@@ -212,7 +213,7 @@ Test ROC AUC: 0.9075
 **Train vs Test**
 
 
-<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/8199392e-4f56-426e-8b3e-f1946da93b26" />
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/af49de38-78d2-4673-ab90-77157296a2a2" />
 
 
 <br>
@@ -235,7 +236,8 @@ Categories (6, interval[float64, right]): [(36.066, 159.81] < (159.81, 439.852] 
 **Train vs Test**
 
 
-<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/1d5245f3-58b9-44a3-9db2-21f6d98fad07" />
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/a4e95f95-6170-4d90-8f40-dcd7908c7360" />
+
 
 <br>
 <br>
