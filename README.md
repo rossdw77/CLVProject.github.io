@@ -9,7 +9,7 @@ CLV prediction matters to ensure that marketing teams are catering to their cust
 
 The primary target variable for this project is **Total_Amount**
 
-**Recency, Frequency and Spend** are key independent variables to consider, however other features like product category, customer demographics and website engagement were evaluated. Product category is a feature that is **highly linked** to **how much a customer ended up spending**
+**Recency, Frequency and Spend** are key variables to consider, however other features like product category, customer demographics and website engagement were evaluated. Product category is a feature that is **highly linked** to **how much a customer ended up spending**
 
 
 ### What actions can a business take to maximize CLV value?
